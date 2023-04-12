@@ -1,0 +1,97 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+    font-family: 'Oswald', sans-serif;
+}
+
+nav {
+    padding:3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 5rem;
+    font-size: 1.2rem;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: rgb(1, 10, 18);
+    cursor: pointer;
+
+
+}
+
+.nav-item{
+    position: relative;
+    
+}
+
+.active-nav{
+    height: 3px;
+    background-color:hsl(120, 73%, 75%);
+    border-radius: 1rem;
+    position:absolute ;
+    left:0;
+    bottom: -10px;
+    width: 100%;
+}
+
+
+section {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 3rem;
+    margin: 5rem 10rem;
+}
+
+.card {
+    height:15rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
+    grid-column: span 3;
+    font-size: 1.2rem;
+    padding: 5rem;
+    box-shadow: 0.7rem 0.7rem 0rem black;
+    border: 3px solid black;
+    gap: 2rem;
+}
+
+.card p {
+    line-height: 2rem;
+    display: none;
+}
+
+.card.active p {
+    display: block;
+}
+
+.card.active{
+    grid-column: 1/ span 6;
+    grid-row:1;
+    order:0;
+    height: auto;
+}
+
+.card.is-inactive{
+    grid-column: span 2;
+}
+
