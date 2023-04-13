@@ -15,10 +15,11 @@ body{
 }
 
 nav {
-    padding:3rem;
+    padding:2rem;
     display: flex;
     justify-content: center;
 }
+
 
 .nav-links{
     display: flex;
@@ -26,6 +27,23 @@ nav {
     gap: 5rem;
     font-size: 1.2rem;
 }
+
+@media(max-width:70em) {
+    nav {
+        padding:0.5rem;
+        display: flex;
+        
+    }
+
+    .nav-links{
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+        font-size: 1rem;
+        justify-content: space-around;
+    }
+}
+
 
 .nav-links a{
     text-decoration: none;
@@ -55,8 +73,10 @@ section {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 3rem;
-    margin: 5rem 10rem;
+    margin: 5rem 5rem;
 }
+
+
 
 .card {
     height:15rem;
@@ -74,6 +94,8 @@ section {
     border: 3px solid black;
     gap: 2rem;
 }
+
+
 
 .card p {
     line-height: 2rem;
@@ -93,5 +115,44 @@ section {
 
 .card.is-inactive{
     grid-column: span 2;
+}
+
+
+@media(max-width:70em) {
+
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+        margin: 1rem 1rem;
+    }
+
+    .card {
+        height:5rem;
+        cursor: pointer;
+        border-radius: 0.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: lightgreen;
+        grid-column:1/ span 2;
+        font-size: 1.2rem;
+        padding: 3rem;
+        box-shadow: 0.4rem 0.4rem 0rem black;
+        border: 1px solid black;
+        gap: 1rem;
+    }
+
+    .card.active{
+        grid-column: 1/ span 2;
+        grid-row:1;
+        order:0;
+        height: auto;
+    }
+    
+    .card.is-inactive{
+        grid-column: 1/ span 2;
+    }
 }
 
